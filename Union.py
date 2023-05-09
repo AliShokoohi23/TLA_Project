@@ -76,8 +76,12 @@ def union():
     
     fa1["final_states"] = "{" f"'{new_final_state}'" "}"
     
+    save_json_file(fa1,"union.json")
+    
     return fa1
 
-
+def save_json_file(fa,name):
+    with open(name, "w") as f:
+        json.dump(fa, f, indent=2)
 
 union_automata = union()
