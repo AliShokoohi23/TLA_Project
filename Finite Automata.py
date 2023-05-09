@@ -8,10 +8,17 @@ def is_accepted(automata, input_str):
         for state in current_states:
             if state in automata["transitions"] and symbol in automata["transitions"][state]:
                 next_states |= set(automata["transitions"][state][symbol])
-        
+        next_states_copy = current_states.copy()
         current_states = next_states
     
-
+    while True:
+        
+        for state in current_states:
+            if state in automata["transitions"] and "" in automata["transitions"][state]:
+                next_states_copy |= set(automata["transitions"][state][""])
+        if next_states_copy == current_states:
+            break
+    
     return any(state in automata["final_states"] for state in current_states)
 
 
