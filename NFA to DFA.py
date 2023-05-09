@@ -76,7 +76,9 @@ def nfa_to_dfa(nfa):
     
     
     
-
+    dfa_path = "DFA.json"
+    with open(dfa_path, 'w') as output_file:
+        json.dump(dfa, output_file, indent=2)
     return dfa
 
 input_file = "NFA.json"
