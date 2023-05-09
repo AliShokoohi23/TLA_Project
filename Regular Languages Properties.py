@@ -209,7 +209,7 @@ def star():
 
 def save_json_file(fa,name):
     with open(name, "w") as f:
-        json.dump(fa, f, cls=SetEncoder, indent=2)
+        json.dump(fa, f, indent=2)
 
 
 star_automata = star()
