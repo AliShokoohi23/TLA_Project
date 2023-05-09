@@ -79,7 +79,12 @@ def minimize_dfa(dfa):
             
                 
     
-
+    min_states = "{" + ",".join(f"'{state}'" for state in min_states ) + "}"
+    
+        
+    input_symbols = "{" + ",".join(f"'{symbol}'" for symbol in dfa['input_symbols']) + "}"
+    
+    min_final_states = "{" + ",".join(f"'{state}'" for state in min_final_states_set ) + "}"
     
     return {
         "states": min_states,
